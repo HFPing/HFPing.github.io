@@ -1,20 +1,35 @@
 let angle=0;
+let modelo;
+let fov;
+let cameraZ;
+let imagen;
+
+function preload(){
+	imagen=loadImage('piso.jpg');
+	//modelo=loadModel('train-corrected.obj');
+	modelo=loadModel('MikuFigure/MikuFigure.obj');
+}
 
 function setup() {
 	createCanvas(400,300,WEBGL);
+	fov=PI/3;
+	cameraZ=(height/2.0)/tan(fov/2.0);
 }
 
 function draw() {
-	background(175);
-	rectMode(CENTER);
-	noStroke();
-	fill(0,0,255);
-	translate(mouseX-width/2,mouseY-height/2);
+	background(0);
+	let camZ=map(mouseX,0,width,-513,-500);
+	ambientLight(255,0,255);
+	directionalLight(255,255,255,0,0,1);
+	camera(0,0,camZ+(height/2)/tan(PI/6),0,0,0,0,1,0);
+	perspective(fov,width/height,0.01,2000);
 	rotateX(angle);
-	rotateY(angle*0.3);
-	rotateZ(angle*0.3);
-	//rect(0,0,150,100);
-	//box(100,150,50);
-	torus(80,10);
-	angle+=0.07;
+	rotateY(angle*1.3);
+	rotateZ(angle*0.7);
+	//box(100);
+	//specularMaterial(255);
+	//normalMaterial();
+	texture(imagen);
+	model(modelo);
+	angle+=0.01;
 }
