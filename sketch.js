@@ -1,17 +1,20 @@
-// background, stroke, fill
+let angle=0;
 
 function setup() {
-	createCanvas(600,400);
-	background(250,250,100);
-}
-// Comentario
-function draw() {
-	//background(250,250,100);
-	noStroke();
-	fill(250,200,200,50);
-	ellipse(mouseX,mouseY,25,25); // Coordenadas del mouse
+	createCanvas(400,300,WEBGL);
 }
 
-function mousePressed(){
-	background(250,250,100);
+function draw() {
+	background(175);
+	rectMode(CENTER);
+	noStroke();
+	fill(0,0,255);
+	translate(mouseX-width/2,mouseY-height/2);
+	rotateX(angle);
+	rotateY(angle*0.3);
+	rotateZ(angle*0.3);
+	//rect(0,0,150,100);
+	//box(100,150,50);
+	torus(80,10);
+	angle+=0.07;
 }
