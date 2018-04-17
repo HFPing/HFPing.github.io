@@ -23,7 +23,7 @@ function draw() {
 	directionalLight(255,255,255,0,0,1);
 	camera(0,0,camZ+(height/2)/tan(PI/6),0,0,0,0,1,0);
 	perspective(fov,width/height,0.01,2000);
-	// rotateX(angle);
+	rotateX(angle);
 	// rotateY(angle*1.3);
 	// rotateZ(angle*0.7);
 	// box(100);
