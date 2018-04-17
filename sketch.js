@@ -25,10 +25,10 @@ function draw() {
 	perspective(fov,width/height,0.01,2000);
 	rotateX(angle);
 	rotateY(angle*1.3);
-	rotateZ(angle*0.7);
-	//box(100);
-	//specularMaterial(255);
-	//normalMaterial();
+	// rotateZ(angle*0.7);
+	// box(100);
+	// specularMaterial(255);
+	// normalMaterial();
 	texture(imagen);
 	model(modelo);
 	angle+=0.01;
