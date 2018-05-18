@@ -1,4 +1,4 @@
-let angle=0;
+let angle;
 let modelo;
 let fov;
 let cameraZ;
@@ -11,6 +11,7 @@ function preload(){
 }
 
 function setup() {
+	angle = 0;
 	createCanvas(400,300,WEBGL);
 	fov=PI/3;
 	cameraZ=(height/2.0)/tan(fov/2.0);
