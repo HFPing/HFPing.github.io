@@ -32,5 +32,5 @@ function draw() {
 	// normalMaterial();
 	texture(imagen);
 	model(modelo);
-	angle+=0.02;
+	angle+=0.01;
 }
